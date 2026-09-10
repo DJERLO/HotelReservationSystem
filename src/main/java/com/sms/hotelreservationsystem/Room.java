@@ -67,9 +67,6 @@ public class Room {
             return "Room Number: " + roomNumber + "\n" +
                     "Room Type: " + roomType + "\n" +
                     "Price Per Night: " + pricePerNight + "\n" +
-                    "Status: " + status;
-      
-           
-    
+                    "Status: " + status + "\n";
     }
 }
