@@ -20,8 +20,8 @@ public class HotelReservationSystem {
         System.out.println("Starting Hotel Reservation System...");
 
         DatabaseConnection.initializeDatabase();
-        boolean success = DatabaseConnection.addRoom("101", "Deluxe Suite", 2500.00);
-        if (success) {
+        boolean isSuccess = Room.add("101", "Deluxe Suite", 2500.00);
+        if (isSuccess) {
             System.out.println("Room 101 successfully added to database!");
         } else {
             System.out.println("Room 101 already exists or failed to insert.");

@@ -54,27 +54,4 @@ public class DatabaseConnection {
             System.err.println("Failed to initialize database schema: " + e.getMessage());
         }
     }
-
-    /**
-     * Sample Method gamit ang Bind Parameters (?) para mag-add ng bagong kwarto
-     */
-    public static boolean addRoom(String roomNumber, String roomType, double pricePerNight) {
-        String query = "INSERT INTO rooms (room_number, room_type, price_per_night) VALUES (?, ?, ?)";
-
-        try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(query)) {
-
-            // Bind Parameters
-            pstmt.setString(1, roomNumber);
-            pstmt.setString(2, roomType);
-            pstmt.setDouble(3, pricePerNight);
-
-            int rowsInserted = pstmt.executeUpdate();
-            return rowsInserted > 0;
-
-        } catch (SQLException e) {
-            System.err.println("Error adding room: " + e.getMessage());
-            return false;
-        }
-    }
 }
